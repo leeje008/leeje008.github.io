@@ -54,7 +54,7 @@ menu:
   - title:             Analysis
     url:               /analysis/
   - title:             ML
-    url:               /ML/
+    url:               /ml/_posts/
   - title:             Statistic
     url:               /Statistic/
   - title:             Coding
