@@ -1,7 +1,7 @@
 ---
+published: true
 layout: post
 title: Oversampling
-description: >
 sitemap: false
 hide_last_modified: true
 use_math: true
