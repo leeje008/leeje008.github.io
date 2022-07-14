@@ -54,7 +54,7 @@ menu:
   - title:             Math
     url:               /Math/
   - title:             ML
-    url:               /ml/_posts/
+    url:               /ml/
   - title:             Statistic
     url:               /statistic/
   - title:             Coding
