@@ -1,5 +1,5 @@
 ---
-layout: ml
+layout: post
 title: ML_Content_I
 description: >
   A page showing how regular markdown content is styled in Hydejack.
