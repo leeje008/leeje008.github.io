@@ -180,7 +180,7 @@ kramdown:
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-disqus:                <@disqus_9ck0UaG0N5>
+disqus:                @disqus_9ck0UaG0N5
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!
