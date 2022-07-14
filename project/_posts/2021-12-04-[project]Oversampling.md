@@ -1,12 +1,10 @@
 ---
-
-layout: single
-title: "[project]oversampling"
-categories: [Project, Coding]
-tag: [python]
-author_profile: false
-use_math: true
-
+layout: post
+title: [project]Oversampling
+description: >
+  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+sitemap: false
+hide_last_modified: true
 ---
 
 
