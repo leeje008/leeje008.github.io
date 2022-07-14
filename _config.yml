@@ -54,13 +54,13 @@ menu:
   - title:             Analysis
     url:               /analysis/
   - title:             ML
-    url:               /ML/
+    url:               /ml/_posts/
   - title:             Statistic
-    url:               /Statistic/
+    url:               /statistic/
   - title:             Coding
-    url:               /Coding/
+    url:               /coding/
   - title:             Project
-    url:               /Project/
+    url:               /project/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
