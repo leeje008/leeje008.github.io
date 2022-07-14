@@ -86,8 +86,8 @@ paginate_path:         /:num/
 # Theme
 # ---------------------------------------------------------------------------------------
 
-theme: jekyll-theme-hydejack
-remote_theme: hydecorp/hydejack@v9
+# theme: jekyll-theme-hydejack
+remote_theme: hydecorp/hydejack@v9.1.6
 
 
 # Customizaton
@@ -427,3 +427,18 @@ jekyll_compose:
       links:
         - title: Project Link
           url: https://example.com
+
+
+disqus: <disqus shortname>
+
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      comments: true
+
+
+kramdown:
+  math_engine:         katex
+  math_engine_opts:    {}
