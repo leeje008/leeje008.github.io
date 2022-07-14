@@ -2,9 +2,8 @@
 published: true
 layout: post
 title: Oversampling
+categories: [Project]
 sitemap: false
-hide_last_modified: true
-use_math: true
 ---
 
 
