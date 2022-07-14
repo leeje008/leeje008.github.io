@@ -442,3 +442,13 @@ defaults:
 kramdown:
   math_engine:         katex
   math_engine_opts:    {}
+
+
+
+hydejack:
+  dark_mode:
+    dynamic: true
+    sunrise: 6
+    sunset:  18
+    icon:    true
+    always:  false
