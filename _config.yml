@@ -52,7 +52,7 @@ menu:
   - title:             About
     url:               /about/
   - title:             Math
-    url:               /Math/
+    url:               /math/
   - title:             ML
     url:               /ml/
   - title:             Statistic
