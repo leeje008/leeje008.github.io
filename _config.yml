@@ -450,3 +450,13 @@ hydejack:
     sunset:  18
     icon:    true
     always:  false
+
+
+tipue_search:
+     include:
+         pages: false
+         collections: []
+     exclude:
+         files: [search.html, index.html, tags.html]
+         categories: []
+         tags: []
