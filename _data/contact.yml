@@ -15,6 +15,11 @@
   icon: 'fas fa-rss'
   noblank: true
 
+  type: facebook
+  icon: 'fab fa-facebook'
+  url: 'https://www.facebook.com/profile.php?id=100006983951106'
+
+
 # Uncomment and complete the url below to enable more contact options
 # -
 #   type: mastodon
