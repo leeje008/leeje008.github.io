@@ -24,7 +24,7 @@
         {% endcapture %}
 
         {{ site.data.locales[lang].meta
-          | default: 'Powered by :PLATFORM with :THEME theme.'
+          | default: <!-- 'Powered by :PLATFORM with :THEME theme.'-->
           | replace: ':PLATFORM', _platform | replace: ':THEME', _theme
         }}
 
