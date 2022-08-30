@@ -31,6 +31,3 @@ redirect_from:
 - Korea University T.A for Statistical Modeling for Deep learning (undergraduate, Spring 2022)
 
 
-
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
