@@ -2,7 +2,7 @@
 title: About
 icon: fas fa-info-circle
 order: 4
-image: /assets/img/me.jpg
+image: '/assets/img/me.jpg'
 description: >
   
 hide_description: true
