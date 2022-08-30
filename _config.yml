@@ -29,7 +29,7 @@ description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://leeje008.github.io'
+url: 'https://leeje008.github.io/'
 
 github:
   username: leeje008             # change to your github username
@@ -83,7 +83,7 @@ theme_mode:   # [light|dark]
 img_cdn: 'https://raw.githubusercontent.com/cotes2020/chirpy-images/main'
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/me3.jpg
+avatar: assets/img/me3.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
