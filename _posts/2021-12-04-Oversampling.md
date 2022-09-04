@@ -4,6 +4,7 @@ layout: post
 title: Oversampling
 categories: [Project]
 tags: [subject_project]
+use_math: true
 sitemap: false
 ---
 
