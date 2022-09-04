@@ -3,7 +3,7 @@ published: true
 layout: post
 title: "Sample_post"
 categories: [ML]
-use_math: true
+math: true
 sitemap: false
 ---
 
@@ -23,7 +23,7 @@ $$ \left[
 \end{array}
 \right] $$
 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $
 
 
 $$
