@@ -2,7 +2,6 @@
 title: About
 icon: fas fa-info-circle
 order: 4
-image: '../assets/img/me.jpg'
 description: >
   
 hide_description: true
@@ -10,6 +9,8 @@ redirect_from:
   - /download/
 ---
 <!--author-->
+
+![img](\assets\img\me.jpg){: width="200" height="200"}
 
 ## Education
 
@@ -29,5 +30,7 @@ redirect_from:
 - Korea University T.A for Regression Analysis (undergraduate, Fall 2021)
 - Korea University T.A for Statistical Computer Programming (undergraduate, Fall 2021)
 - Korea University T.A for Statistical Modeling for Deep learning (undergraduate, Spring 2022)
+
+
 
 
