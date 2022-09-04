@@ -36,13 +36,13 @@ ex) 특정 질병을 예측하는 문제의 경우 질병을 가진 사람의 �
 
 혼동행렬은 머신러닝 분류 평가지표로 많이 활용되는 행렬으로 각 행은 실제 값을 각 열은 분류 모델에서의 예측값을 의미한다
 
-![다운로드](/assets/images/oversampling/다운로드.png)
+![다운로드](/assets/img/oversampling/다운로드.png)
 
 ## Accuracy(정확도)
 
 정확도는 전체 데이터 中 예측에 성공한 데이터의 비율을 의미한다. 
 
-$ Accuracy = (TP+TN)/(TP+FP+TN+FN) $
+$ Accuracy = \frac{TP+TN}{TP+FP+TN+FN} $
 
 이 때 class가 고르게 분포되어 있는 경우 정확도를 모델 평가 지표로 사용하는 것이 좋지만 class가 불균형한 형태의 경우
 
@@ -56,19 +56,19 @@ why? True와 False의 비율이 9:1이라 할 때 단순히 True라고 예측하
 
 예측 결과가 positive일 때 실제로 positive인 경우를 말한다.
 
-$ Precision = TP /(TP + FP) $
+$ Precision = \frac{TP}{TP + FP} $
 
 ## Sensitivity(민감도 = 재현율)
 
 실제로 positive일 때 예측도 positive인 경우를 의미한다.
 
-$ Sensitivity = TP / (TP+FN) $
+$ Sensitivity = \frac{TP}{TP+FN} $
 
 ## Specificity(특이도)
 
 현실이 부정일 때 예측도 부정인 경우를 의미한다.
 
-$ Specificity = TN / (TN+FP) $
+$ Specificity = \frac{TN}{TN+FP} $
 
 ## F1-SCORE
 
@@ -78,7 +78,7 @@ $ Specificity = TN / (TN+FP) $
 
 민감도를 P 재현율을 R이라고 하면
 
-$ f1-score = 2PR / (P+R) $
+$ f1-score = 2 \frac{PR}{P+R} $
 
 ## ROC-CURVE
 
@@ -92,7 +92,7 @@ $ y=x $는 임의의 분류 모델 즉 동전 던지기와 같으며 (0,1)의 �
 
 
 
-![다운로드 (1)](/assets/images/oversampling/다운로드 (1).png)
+![다운로드 (1)](/assets/img/oversampling/다운로드 (1).png)
 
 ## How to modeling Imbalanced data
 
@@ -129,11 +129,11 @@ $ y=x $는 임의의 분류 모델 즉 동전 던지기와 같으며 (0,1)의 �
 
 # undersampling 과 oversampling
 
-![다운로드 (2)](/assets/images/oversampling/다운로드 (2).png)
+![다운로드 (2)](/assets/img/oversampling/다운로드 (2).png)
 
 ### DATA-SET : Kaggle Loan prediction based on customer behavior
 
-![다운로드 (3)](/assets/images/oversampling/다운로드 (3).png)
+![다운로드 (3)](/assets/img/oversampling/다운로드 (3).png)
 
 # SMOTE
 
@@ -149,7 +149,7 @@ $ y=x $는 임의의 분류 모델 즉 동전 던지기와 같으며 (0,1)의 �
 
 이를 그림으로 표현하면 다음과 같다.
 
-![다운로드 (4)](/assets/images/oversampling/다운로드 (4).png)
+![다운로드 (4)](/assets/img/oversampling/다운로드 (4).png)
 
 
 ```python
@@ -238,7 +238,7 @@ ADASYN 기법은 주변의 다수 데이터를 고려하여 해당 데이터에�
 
 즉 주변 데이터의 밀도에 따라 데이터를 생성하는 방법이라고 할 수 있다.
 
-![다운로드 (5)](/assets/images/oversampling/다운로드 (5).png)
+![다운로드 (5)](/assets/img/oversampling/다운로드 (5).png)
 
 
 ```python
@@ -274,7 +274,7 @@ print(f"{end - start:.5f} sec")
 
 4. $ \alpha = \overline{d_{intra}} / \overline{d_{extra}} $ 를 계산한다. 이 때 이 값이 0.5보다 작으면 smote와 같이 합성 데이터 생성 이 값이 0.5보다 크면 합성 데이터를 생성하지 않는다.
 
-![제목 없음](/assets/images/oversampling/제목 없음.png)
+![제목 없음](/assets/img/oversampling/제목 없음.png)
 
 
 
@@ -414,7 +414,7 @@ for i in a:
     get_clf_eval(y_test_s, models_s[i][1].predict(X_test_s))
 ```
 
-![다운로드 (6)](/assets/images/oversampling/다운로드 (6).png)
+![다운로드 (6)](/assets/img/oversampling/다운로드 (6).png)
 
 이 외에도 ADASYN,Distribution-smote 방법도 동일하게 적용하면 된다.
 
@@ -462,7 +462,7 @@ scores_df = pd.DataFrame(gs_pipeline_1.cv_results_)
 
 결과는 다음과 같다.
 
-![다운로드 (7)](/assets/images/oversampling/다운로드 (7).png)
+![다운로드 (7)](/assets/img/oversampling/다운로드 (7).png)
 
 AUC의 성능의 경우 Random-forest의 모델이 가장 좋았지만 computation-time이 굉장히 오래 걸렸음을 확인할 수 있음
 
@@ -470,7 +470,7 @@ AUC의 성능의 경우 Random-forest의 모델이 가장 좋았지만 computati
 
 ## Grid-search Results of KNN
 
-![다운로드 (8)](/assets/images/oversampling/다운로드 (8).png)
+![다운로드 (8)](/assets/img/oversampling/다운로드 (8).png)
 낮은 성능과 높은 성능을 보이는 일정한 영역이 존재함을 확인
 
 => 추가적으로 K의 개수를 10 이하로, oversampling-proportion을 1에 근접한 값으로 탐색한다면 안정적인 성능을 보일 것으로 기대
