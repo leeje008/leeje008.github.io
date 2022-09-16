@@ -30,6 +30,8 @@ redirect_from:
 - Korea University T.A for Regression Analysis (undergraduate, Fall 2021)
 - Korea University T.A for Statistical Computer Programming (undergraduate, Fall 2021)
 - Korea University T.A for Statistical Modeling for Deep learning (undergraduate, Spring 2022)
+- Korea University T.A for Statistical Methodology for Data Analysis (undergraduate, Fall 2022)
+
 
 
 
