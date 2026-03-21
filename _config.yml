@@ -21,9 +21,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 고영헌                          # the main title
+title: Younghun Ko                          # the main title
 
-tagline: 데이터 사이언티스트 & LLM 에이전트 개발자   # it will display as the sub-title
+tagline: Data Scientist & ML Engineer   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Data Science Portfolio - Machine Learning, NLP, LLM Agent, Portfolio Optimization
@@ -40,7 +40,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: 고영헌
+  name: Younghun Ko
   email: leeje008@naver.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
