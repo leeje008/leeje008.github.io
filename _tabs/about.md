@@ -22,7 +22,7 @@ Python, NLP, LLM Agent, Portfolio Optimization, Statistical Machine Learning
 
 ## Education
 
-- **MS in Statistics**, Korea University (Sep 2021 - Aug 2023)
+- **MS in Statistics**, Korea University (Sep 2021 - Feb 2024)
   - 연구 분야: Sufficient Dimension Reduction, Neural Network
 - **BS in Applied Statistics**, Chung-Ang University (Mar 2014 - Feb 2021)
 
