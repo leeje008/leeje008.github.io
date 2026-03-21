@@ -9,6 +9,8 @@ redirect_from:
   - /download/
 ---
 
+![img](/assets/img/me.jpg){: width="200" height="200"}
+
 ## Younghun Ko
 
 Data Scientist & ML Engineer
