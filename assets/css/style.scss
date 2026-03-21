@@ -10,3 +10,96 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 @import "{{ site.theme }}";
 
 /* append your custom style below */
+
+/* ===== Post List - Card hover effect ===== */
+#post-list .post-preview {
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, background-color 0.2s ease;
+}
+
+#post-list .post-preview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-hover-bg, rgba(0, 0, 0, 0.02));
+}
+
+[data-mode="dark"] #post-list .post-preview:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Category & Tag badges ===== */
+.categories .card-body > a,
+.post-tag {
+  border-radius: 14px !important;
+  padding: 3px 12px !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.categories .card-body > a:hover,
+.post-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Code blocks ===== */
+div.highlight {
+  border-radius: 10px;
+}
+
+div.highlight pre {
+  border-radius: 10px;
+}
+
+/* ===== Tables ===== */
+.post-content table {
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.post-content table thead th {
+  font-weight: 600;
+}
+
+/* ===== Sidebar profile ===== */
+#sidebar .profile-wrapper {
+  margin-top: 1.5rem;
+}
+
+#sidebar .profile-wrapper .site-title {
+  font-weight: 700;
+}
+
+#sidebar .profile-wrapper .site-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ===== Post content typography ===== */
+.post-content h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--main-border-color, #e9ecef);
+}
+
+.post-content h3 {
+  margin-top: 1.8rem;
+}
+
+/* ===== Smooth link transitions ===== */
+a {
+  transition: color 0.15s ease;
+}
+
+/* ===== Archives timeline ===== */
+.post-list .post-preview {
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.post-list .post-preview:hover {
+  border-left-color: var(--link-color, #2a408e);
+}

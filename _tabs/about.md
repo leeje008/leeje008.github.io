@@ -3,36 +3,53 @@ title: About
 icon: fas fa-info-circle
 order: 4
 description: >
-  
+
 hide_description: true
 redirect_from:
   - /download/
 ---
-<!--author-->
 
-![img](\assets\img\me.jpg){: width="200" height="200"}
+## Younghun Ko
+
+Data Scientist & ML Engineer
+
+Python, NLP, LLM Agent, Portfolio Optimization, Statistical Machine Learning
+
+---
 
 ## Education
 
-- Mar 2014 - Feb 2021: BS in Applied Statistic, Chung-Anang University
+- **MS in Statistics**, Korea University (Sep 2021 - Aug 2023)
+  - 연구 분야: Sufficient Dimension Reduction, Neural Network
+- **BS in Applied Statistics**, Chung-Ang University (Mar 2014 - Feb 2021)
 
-- Sep 2021 - Present: MS in Statistic, Korea University
+## Tech Stack
 
-## Fields of interest
+- **Languages**: Python, SQL
+- **ML/DL**: PyTorch, scikit-learn, NumPy, Pandas
+- **LLM & Agent**: Anthropic Claude API, Ollama, RAG
+- **Web/Dashboard**: Streamlit
+- **Data**: yfinance, pykrx, FRED API, DART API
+- **Infra**: Git, Docker
 
+## Fields of Interest
+
+- LLM Agent & RAG Systems
+- Portfolio Optimization & Quantitative Finance
 - Sufficient Dimension Reduction
-- Functional Data analysis
-- Bayesian statistic
-- Statiscal Machine Learning
+- Anomaly Detection
+- Time Series Analysis
 
-## TEACHING EXPERIENCES
+## Teaching Experiences
 
-- Korea University T.A for Regression Analysis (undergraduate, Fall 2021)
-- Korea University T.A for Statistical Computer Programming (undergraduate, Fall 2021)
-- Korea University T.A for Statistical Modeling for Deep learning (undergraduate, Spring 2022)
-- Korea University T.A for Statistical Methodology for Data Analysis (undergraduate, Fall 2022)
+- Korea University T.A for Regression Analysis (Fall 2021)
+- Korea University T.A for Statistical Computer Programming (Fall 2021)
+- Korea University T.A for Statistical Modeling for Deep Learning (Spring 2022)
+- Korea University T.A for Statistical Methodology for Data Analysis (Fall 2022)
 
+## Contact
 
-
+- **GitHub**: [github.com/leeje008](https://github.com/leeje008)
+- **Email**: leeje008@naver.com
 
 

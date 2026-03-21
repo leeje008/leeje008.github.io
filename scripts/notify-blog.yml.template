@@ -1,0 +1,20 @@
+# 이 파일을 각 프로젝트 레포의 .github/workflows/notify-blog.yml 에 복사하세요.
+# 사전 조건: 레포 Settings > Secrets에 BLOG_PAT 추가 (repo + workflow 권한의 PAT)
+
+name: Notify Blog Update
+on:
+  push:
+    paths: ['README.md']
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger blog sync
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.BLOG_PAT }}
+          repository: leeje008/leeje008.github.io
+          event-type: repo-updated
+          client-payload: '{"repo": "${{ github.repository }}"}'

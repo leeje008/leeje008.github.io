@@ -1,0 +1,89 @@
+name: Sync Project Posts
+
+on:
+  # 다른 레포에서 repository_dispatch로 트리거
+  repository_dispatch:
+    types: [repo-updated]
+
+  # 매주 월요일 오전 9시 (KST) 전체 스캔
+  schedule:
+    - cron: '0 0 * * 1'  # UTC 00:00 = KST 09:00
+
+  # 수동 실행
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: '특정 레포만 업데이트 (비워두면 전체 스캔)'
+        required: false
+        default: ''
+      force:
+        description: '기존 포스트 강제 갱신'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run sync script
+        id: sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+
+          # repository_dispatch에서 특정 레포 지정
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            REPO_NAME=$(echo '${{ toJson(github.event.client_payload) }}' | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('repo','').split('/')[-1])" 2>/dev/null || echo "")
+            if [ -n "$REPO_NAME" ]; then
+              ARGS="--repo $REPO_NAME --force"
+            fi
+          fi
+
+          # workflow_dispatch에서 특정 레포 지정
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ -n "${{ github.event.inputs.repo }}" ]; then
+              ARGS="--repo ${{ github.event.inputs.repo }}"
+            fi
+            if [ "${{ github.event.inputs.force }}" = "true" ]; then
+              ARGS="$ARGS --force"
+            fi
+          fi
+
+          python scripts/sync_projects.py $ARGS
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _posts/
+          git commit -m "chore: sync project posts from GitHub repos
+
+          Automated update by sync-projects workflow.
+          Triggered by: ${{ github.event_name }}"
+          git push

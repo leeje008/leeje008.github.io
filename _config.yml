@@ -21,12 +21,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Yh's blog                          # the main title
+title: Younghun Ko                          # the main title
 
-tagline: Final success will be made repeated attempts   # it will display as the sub-title
+tagline: Data Scientist & ML Engineer   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  Data Science Portfolio - Machine Learning, NLP, LLM Agent, Portfolio Optimization
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://leeje008.github.io'
@@ -35,12 +35,12 @@ github:
   username: leeje008             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username:            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Koyounghun
+  name: Younghun Ko
   email: leeje008@naver.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
