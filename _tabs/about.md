@@ -8,8 +8,9 @@ hide_description: true
 redirect_from:
   - /download/
 ---
+<!--author-->
 
-![img](/assets/img/me.jpg){: width="200" height="200"}
+![profile]({{ '/assets/img/me.jpg' | relative_url }}){: width="200" height="200" .rounded-circle}
 
 ## Younghun Ko
 
