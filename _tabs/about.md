@@ -12,47 +12,52 @@ redirect_from:
 
 ![profile]({{ '/assets/img/me.jpg' | relative_url }}){: width="200" height="200" .rounded-circle}
 
-## Younghun Ko
+## 고영훈 (Younghun Ko)
 
-Data Scientist & ML Engineer
-
-Python, NLP, LLM Agent, Portfolio Optimization, Statistical Machine Learning
+데이터 사이언티스트 & LLM 에이전트 개발자
 
 ---
 
-## Education
+## 경력
 
-- **MS in Statistics**, Korea University (Sep 2021 - Feb 2024)
-  - 연구 분야: Sufficient Dimension Reduction, Neural Network
-- **BS in Applied Statistics**, Chung-Ang University (Mar 2014 - Feb 2021)
+- **에이브랩스** (2025.01 ~ 현재) — LLM 에이전트 개발
+  - 관리회계 자동화: SQL 쿼리 + Apache Airflow 기반 손익분석 테이블 생성 자동화 (기존 5시간 → 20분으로 단축)
+  - MDA Agent: LangGraph 기반 Multi-Agent 관리회계 분석 시스템 설계·구현. 9개 계열사 대상 자연어 질의 기반 매출·원가·손익 분석 에이전트 개발
+- **KB라이프생명** (2024.08 ~ 2024.09) — 인턴, 상품전략
+  - 위험률 정비 및 감리 규정 체크, 시장조사
 
-## Tech Stack
+## 학력
 
-- **Languages**: Python, SQL
+- **고려대학교 일반대학원** 통계학 석사 (2021.09 ~ 2024.02)
+  - 전공: 통계적 데이터과학
+  - 학위 논문: *Penalized Neural Network Sufficient Dimension Reduction*
+  - 연구 분야: Sufficient Dimension Reduction, Neural Network, Sparse Modeling
+- **중앙대학교** 응용통계학 학사 (2014.03 ~ 2021.02)
+
+## 기술 스택
+
+- **언어**: Python, SQL
 - **ML/DL**: PyTorch, scikit-learn, NumPy, Pandas
-- **LLM & Agent**: Anthropic Claude API, Ollama, RAG
-- **Web/Dashboard**: Streamlit
-- **Data**: yfinance, pykrx, FRED API, DART API
-- **Infra**: Git, Docker
+- **LLM & Agent**: LangChain, LangGraph, Anthropic Claude API, Ollama, RAG
+- **백엔드**: FastAPI, PostgreSQL, Alembic
+- **대시보드**: Streamlit
+- **인프라**: Docker, Apache Airflow, Git
 
-## Fields of Interest
+## 관심 분야
 
-- LLM Agent & RAG Systems
-- Portfolio Optimization & Quantitative Finance
+- LLM Agent & RAG 시스템
+- 데이터 파이프라인 자동화
 - Sufficient Dimension Reduction
-- Anomaly Detection
-- Time Series Analysis
+- 이상 탐지 (Anomaly Detection)
+- 시계열 분석
 
-## Teaching Experiences
+## 교육 경험
 
-- Korea University T.A for Regression Analysis (Fall 2021)
-- Korea University T.A for Statistical Computer Programming (Fall 2021)
-- Korea University T.A for Statistical Modeling for Deep Learning (Spring 2022)
-- Korea University T.A for Statistical Methodology for Data Analysis (Fall 2022)
+- 고려대학교 조교 — 회귀분석 / 통계소프트웨어 (2021 가을)
+- 고려대학교 조교 — 딥러닝을 위한 통계학 (2022 봄)
+- 고려대학교 조교 — 통계분석방법론 (2022 가을)
 
-## Contact
+## 연락처
 
 - **GitHub**: [github.com/leeje008](https://github.com/leeje008)
-- **Email**: leeje008@naver.com
-
-
+- **이메일**: leeje008@naver.com
