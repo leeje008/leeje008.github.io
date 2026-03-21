@@ -12,7 +12,7 @@ redirect_from:
 
 ![profile]({{ '/assets/img/me.jpg' | relative_url }}){: width="200" height="200" .rounded-circle}
 
-## 고영훈 (Younghun Ko)
+## 고영헌 (Younghun Ko)
 
 데이터 사이언티스트 & LLM 에이전트 개발자
 
