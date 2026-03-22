@@ -123,6 +123,8 @@ paginate: 10
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  math_engine: mathjax
+  math_engine_opts: {}
   syntax_highlighter: rouge
   syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
