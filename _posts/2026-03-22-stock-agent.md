@@ -64,6 +64,106 @@ Streamlit 대시보드 (7개 탭)
 
 ---
 
+## LLM 엔진 설계 상세
+
+### Ollama OpenAI 호환 API 연동
+
+Ollama의 `/v1` 엔드포인트는 OpenAI SDK와 100% 호환되므로, `openai` 패키지를 그대로 사용하면서 로컬 추론을 수행한다. `base_url`만 `http://localhost:11434/v1`로 지정하고, `api_key`는 Ollama에서 검증하지 않으므로 더미 값을 사용한다. 이 설계로 향후 클라우드 LLM으로의 전환이 `base_url`과 `api_key` 변경만으로 가능하다.
+
+### Temperature 전략
+
+| 모델 | Temperature | 이유 |
+|------|------------|------|
+| light (8B) | 0.3 | JSON 응답의 일관성 확보. 높은 temperature는 JSON 파싱 오류 유발 |
+| heavy (27B) | 0.5 | 자연어 리포트에 적절한 다양성 부여. 지나치게 무작위하지 않은 수준 |
+
+### generate() vs generate_json()
+
+`generate()`는 자유 형식 텍스트 생성에 사용하고, `generate_json()`은 시스템 프롬프트 끝에 "반드시 유효한 JSON으로만 응답하세요" 지시를 자동 추가한 뒤, 응답에서 마크다운 코드펜스를 정규표현식으로 스트리핑한다. 로컬 LLM은 JSON을 `` ```json ``` ``으로 감싸는 경향이 있기 때문이다.
+
+### JSON 파싱 Fallback 전략
+
+모든 LLM JSON 응답에 대해 파싱 실패 시 보수적 기본값을 반환한다:
+
+- **뉴스 감성**: 중립 감성(`neutral`, 점수 0.0) + LLM 원본 응답을 `summary`에 보존 + `parse_error: True` 플래그
+- **BL 뷰**: 모든 종목 0.0 뷰(중립) + 0.1 확신도(매우 낮음) — 최적화에 사실상 영향 없음
+- **재무 분석**: 원본 텍스트 그대로 반환
+
+---
+
+## Black-Litterman + AI 뷰 생성 파이프라인
+
+### BL 모델에서 "뷰(View)"의 의미
+
+Black-Litterman 모델에서 뷰란 각 종목의 **향후 6개월 기대 초과수익률**을 연율화 수치로 표현한 것이다. 이 뷰는 시장 균형 수익률(CAPM 사전 분포)과 베이지안 결합되어 사후 기대수익률을 생성한다.
+
+### AI 뷰 생성 프로세스
+
+```
+뉴스 수집 (Google News RSS)
+    ↓
+LLM 뉴스 감성 분석 (light 모델)
+    ↓ market_sentiment, ticker_sentiments
+LLM 뷰 생성 (light 모델)
+    ↓ views: {종목: 기대수익률}, confidence: {종목: 확신도}
+Black-Litterman 최적화 (PyPortfolioOpt)
+    ↓ omega 행렬에 confidence 반영
+사후 기대수익률 → 최적 비중 계산
+```
+
+### 뷰 값 제한 (-0.3 ~ 0.3)
+
+LLM이 극단적 전망을 내놓는 것을 방지하기 위해 프롬프트에서 뷰 범위를 ±30%로 제한한다. confidence는 0.0~1.0이며, 낮은 confidence는 BL 모델의 omega 행렬에서 해당 뷰의 불확실성을 높여 시장 균형 비중에 가깝게 조정한다.
+
+---
+
+## 데이터 수집 Fallback 전략
+
+### 주가 데이터 이중 소스
+
+| 시장 | 1차 소스 | Fallback | 조건 |
+|------|---------|----------|------|
+| KR | pykrx | yfinance (`.KS` 접미사) | pykrx 빈 DataFrame 반환 시 |
+| US/ETF | yfinance | — | 직접 조회 |
+
+### 종가 컬럼 자동 감지
+
+yfinance는 `"Close"`, pykrx는 `"종가"` 컬럼명을 사용하므로, 동적으로 감지하여 통합한다.
+
+### 다중 종목 시계열 통합
+
+여러 종목의 종가를 하나의 DataFrame으로 결합할 때:
+1. `ffill()`: 거래일 차이(한국 휴장, 미국 휴장)로 인한 NaN을 직전 거래일 값으로 채움
+2. `dropna()`: 모든 종목이 거래된 날짜만 유지
+
+### 환율 Fallback
+
+USD/KRW 환율(`KRW=X` 티커) 조회 실패 시 1350.0원을 기본값으로 사용한다.
+
+---
+
+## 멀티에이전트 토론 설계
+
+### 3라운드 구조와 정보 흐름
+
+```
+Round 1: Bull Analyst → bull_case 생성
+                              ↓ (bull_case[:500] 전달)
+Round 2: Bear Analyst → bear_case 생성 (Bull 논거 반박)
+                              ↓ (bull_case + bear_case 전달)
+Round 3: Moderator   → synthesis + final_verdict 생성
+```
+
+### Bear가 Bull을 참조하는 방식
+
+Bear 에이전트의 프롬프트에 Bull 의견의 앞부분(500자)만 포함시켜 핵심 논거를 반박하도록 유도한다. 전체를 포함하지 않는 이유는 프롬프트 길이 제한과 핵심 집중을 위해서다.
+
+### 최종 판정(Verdict) 추출
+
+Moderator 응답에서 영문(`bullish`/`bearish`)과 한국어(`강세`/`약세`) 키워드를 모두 검색하여 최종 판정을 결정한다. 어떤 키워드도 없으면 `neutral`을 반환한다. 모든 라운드에서 heavy 모델을 사용하며, 총 3회 LLM 호출로 약 1분이 소요된다.
+
+---
+
 ## 주요 기능
 
 ### 1. 포트폴리오 통합 현황
