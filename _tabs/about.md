@@ -48,8 +48,8 @@ redirect_from:
 - LLM Agent & RAG 시스템
 - 데이터 파이프라인 자동화
 - Sufficient Dimension Reduction
-- 이상 탐지 (Anomaly Detection)
-- 시계열 분석
+- Sparse Modeling & Variable Selection
+- Reinforcement Learning
 
 ## 교육 경험
 
