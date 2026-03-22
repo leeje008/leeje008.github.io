@@ -23,15 +23,15 @@ math: true
 
 ### Model Definition
 
-그룹 $i$에 속하는 데이터 포인트에 대해:
+그룹 \(i\)에 속하는 데이터 포인트에 대해:
 
 $$
 y = f(x; \theta) + u_i + \varepsilon
 $$
 
-- $f(x; \theta)$: 뉴럴 네트워크 출력 (파라미터 $\theta$)
-- $u_i$: 그룹별 랜덤 효과
-- $\varepsilon$: 잔차 노이즈
+- \(f(x; \theta)\): 뉴럴 네트워크 출력 (파라미터 \(\theta\))
+- \(u_i\): 그룹별 랜덤 효과
+- \(\varepsilon\): 잔차 노이즈
 
 ### Learning Objective
 
@@ -41,7 +41,7 @@ $$
 \mathcal{L}(\theta, u) = \sum_{i} \sum_{j \in G_i} \left(y_j - f(x_j; \theta) - u_i\right)^2 + \lambda \sum_i u_i^2
 $$
 
-여기서 $\lambda$는 정규화 강도를 제어하는 파라미터이다.
+여기서 \(\lambda\)는 정규화 강도를 제어하는 파라미터이다.
 
 ### Group-Level Aggregation
 
