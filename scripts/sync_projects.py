@@ -35,6 +35,7 @@ REPO_POST_MAP = {
     "naver-blog-auto": "naver-blog-auto",
     "travel-planner": "travel-planner",
     "NN_SDR": "nn-sdr",
+    "local-llm-forge": "local-llm-forge",
 }
 
 
