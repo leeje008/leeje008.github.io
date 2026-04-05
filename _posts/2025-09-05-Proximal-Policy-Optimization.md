@@ -20,13 +20,13 @@ $$
 \hat{g} = \hat{\mathbb{E}}_t \left[ \nabla_\theta \log \pi_\theta(a_t | s_t) \hat{A}_t \right]
 $$
 
-여기서 $$\hat{A}_t$$는 시점 $$t$$에서의 이점 함수(advantage function) 추정치이다. 이를 기반으로 하는 서로게이트 목적 함수는 다음과 같다:
+여기서 $\hat{A}_t$는 시점 $t$에서의 이점 함수(advantage function) 추정치이다. 이를 기반으로 하는 서로게이트 목적 함수는 다음과 같다:
 
 $$
 L^{CPI}(\theta) = \hat{\mathbb{E}}_t \left[ \frac{\pi_\theta(a_t | s_t)}{\pi_{\theta_{\text{old}}}(a_t | s_t)} \hat{A}_t \right] = \hat{\mathbb{E}}_t \left[ r_t(\theta) \hat{A}_t \right]
 $$
 
-여기서 $$r_t(\theta) = \pi_\theta(a_t | s_t) / \pi_{\theta_{\text{old}}}(a_t | s_t)$$는 확률 비율(probability ratio)이다.
+여기서 $r_t(\theta) = \pi_\theta(a_t | s_t) / \pi_{\theta_{\text{old}}}(a_t | s_t)$는 확률 비율(probability ratio)이다.
 
 ---
 
@@ -50,7 +50,7 @@ $$
 L^{CLIP}(\theta) = \hat{\mathbb{E}}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right]
 $$
 
-하이퍼파라미터 $$\epsilon$$은 일반적으로 0.1 또는 0.2로 설정된다. 이점이 양수일 때 $$r_t(\theta)$$가 $$1 + \epsilon$$을 초과하면 클리핑되어 과도한 정책 변화를 방지한다. 이점이 음수일 때는 $$1 - \epsilon$$ 미만으로 클리핑된다. 이로써 TRPO와 유사한 신뢰 영역 효과를 1차 최적화만으로 달성한다.
+하이퍼파라미터 $\epsilon$은 일반적으로 0.1 또는 0.2로 설정된다. 이점이 양수일 때 $r_t(\theta)$가 $1 + \epsilon$을 초과하면 클리핑되어 과도한 정책 변화를 방지한다. 이점이 음수일 때는 $1 - \epsilon$ 미만으로 클리핑된다. 이로써 TRPO와 유사한 신뢰 영역 효과를 1차 최적화만으로 달성한다.
 
 ---
 
@@ -62,7 +62,7 @@ $$
 L^{KLPEN}(\theta) = \hat{\mathbb{E}}_t \left[ r_t(\theta) \hat{A}_t - \beta \cdot \text{KL}[\pi_{\theta_{\text{old}}}(\cdot | s_t) \| \pi_\theta(\cdot | s_t)] \right]
 $$
 
-각 업데이트 후 실제 KL 발산 $$d$$를 측정하여 $$d < d_{\text{targ}} / 1.5$$이면 $$\beta \leftarrow \beta / 2$$, $$d > d_{\text{targ}} \times 1.5$$이면 $$\beta \leftarrow 2\beta$$로 조정한다. 실험 결과 클리핑 방식이 더 우수한 성능을 보였다.
+각 업데이트 후 실제 KL 발산 $d$를 측정하여 $d < d_{\text{targ}} / 1.5$이면 $\beta \leftarrow \beta / 2$, $d > d_{\text{targ}} \times 1.5$이면 $\beta \leftarrow 2\beta$로 조정한다. 실험 결과 클리핑 방식이 더 우수한 성능을 보였다.
 
 ---
 
@@ -74,7 +74,7 @@ $$
 L^{CLIP+VF+S}(\theta) = \hat{\mathbb{E}}_t \left[ L^{CLIP}_t(\theta) - c_1 L^{VF}_t(\theta) + c_2 S[\pi_\theta](s_t) \right]
 $$
 
-여기서 $$L^{VF}_t = (V_\theta(s_t) - V_t^{\text{targ}})^2$$은 가치 함수 손실, $$S[\pi_\theta]$$는 엔트로피 보너스이다. $$c_1 = 0.5$$, $$c_2 = 0.01$$이 일반적으로 사용된다.
+여기서 $L^{VF}_t = (V_\theta(s_t) - V_t^{\text{targ}})^2$은 가치 함수 손실, $S[\pi_\theta]$는 엔트로피 보너스이다. $c_1 = 0.5$, $c_2 = 0.01$이 일반적으로 사용된다.
 
 이점 함수는 Generalized Advantage Estimation(GAE)으로 추정한다:
 
@@ -82,7 +82,7 @@ $$
 \hat{A}_t = \delta_t + (\gamma \lambda) \delta_{t+1} + (\gamma \lambda)^2 \delta_{t+2} + \cdots
 $$
 
-여기서 $$\delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)$$는 TD 잔차이다. $$\lambda = 0.95$$, $$\gamma = 0.99$$가 표준 설정이다.
+여기서 $\delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)$는 TD 잔차이다. $\lambda = 0.95$, $\gamma = 0.99$가 표준 설정이다.
 
 ---
 

@@ -29,7 +29,7 @@ KLUE는 다음 8개 태스크로 구성된다:
 | # | 태스크 | 데이터셋 | 평가 지표 |
 |---|--------|---------|----------|
 | 1 | TC (Topic Classification) | YNAT | Macro F1 |
-| 2 | STS (Semantic Textual Similarity) | KLUE-STS | Pearson's $$r$$ / F1 |
+| 2 | STS (Semantic Textual Similarity) | KLUE-STS | Pearson's $r$ / F1 |
 | 3 | NLI (Natural Language Inference) | KLUE-NLI | Accuracy |
 | 4 | NER (Named Entity Recognition) | KLUE-NER | Entity-level F1 / Char-level F1 |
 | 5 | RE (Relation Extraction) | KLUE-RE | Micro F1 / AUPRC |
@@ -93,7 +93,7 @@ KLUE-RoBERTa-large가 대부분의 태스크에서 최고 성능을 달성한다
 
 ## 데이터 구축 방법론
 
-KLUE의 데이터 품질 관리는 다음 절차를 따른다: (1) 전문 어노테이터 채용 및 교육, (2) 파일럿 어노테이션으로 가이드라인 반복 개선, (3) 다중 어노테이터 간 일치도(inter-annotator agreement) 측정, (4) 전문가 검수(adjudication) 단계. NER 태스크의 경우 어노테이터 간 일치도(Cohen's $$\kappa$$)가 0.91로 높은 품질을 달성하였다.
+KLUE의 데이터 품질 관리는 다음 절차를 따른다: (1) 전문 어노테이터 채용 및 교육, (2) 파일럿 어노테이션으로 가이드라인 반복 개선, (3) 다중 어노테이터 간 일치도(inter-annotator agreement) 측정, (4) 전문가 검수(adjudication) 단계. NER 태스크의 경우 어노테이터 간 일치도(Cohen's $\kappa$)가 0.91로 높은 품질을 달성하였다.
 
 ---
 

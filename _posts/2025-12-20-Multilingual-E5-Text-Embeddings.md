@@ -36,7 +36,7 @@ $$
 \mathcal{L}_{\text{InfoNCE}} = -\log \frac{\exp(\text{sim}(q, d^+) / \tau)}{\exp(\text{sim}(q, d^+) / \tau) + \sum_{j=1}^{N} \exp(\text{sim}(q, d_j^-) / \tau)}
 $$
 
-여기서 $$\text{sim}(q, d) = \frac{q^T d}{\|q\| \|d\|}$$는 코사인 유사도, $$\tau$$는 온도 파라미터, $$d^+$$는 양성 문서, $$d_j^-$$는 음성 문서이다. 배치 내 다른 샘플들을 **인-배치 네거티브(in-batch negatives)**로 활용하여 효율적으로 대비 학습을 수행한다.
+여기서 $\text{sim}(q, d) = \frac{q^T d}{\|q\| \|d\|}$는 코사인 유사도, $\tau$는 온도 파라미터, $d^+$는 양성 문서, $d_j^-$는 음성 문서이다. 배치 내 다른 샘플들을 **인-배치 네거티브(in-batch negatives)**로 활용하여 효율적으로 대비 학습을 수행한다.
 
 ### Stage 2: 지도 미세조정
 
