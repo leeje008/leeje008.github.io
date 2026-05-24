@@ -8,15 +8,24 @@ hide_description: true
 redirect_from:
   - /download/
 ---
-<!--author-->
 
-![profile]({{ '/assets/img/me.jpg' | relative_url }}){: width="200" height="200" .rounded-circle}
-
-## 고영헌 (Younghun Ko)
-
-데이터 사이언티스트 & LLM 에이전트 개발자
-
----
+<div class="about-hero">
+  <img src="{{ site.avatar | relative_url }}" class="about-hero__avatar" alt="profile" />
+  <div class="about-hero__body">
+    <div class="eyebrow">About</div>
+    <h1>{{ site.social.name }} <span class="latin">고영헌</span></h1>
+    <p class="about-hero__tagline">{{ site.tagline }}</p>
+    <div class="about-hero__actions">
+      <a class="btn-primary" href="mailto:{{ site.social.email }}">{{ site.social.email }}</a>
+      <a class="btn-secondary" href="https://github.com/{{ site.github.username }}">github.com/{{ site.github.username }}</a>
+    </div>
+  </div>
+  <div class="about-stats">
+    <div class="stat"><div class="stat__num">{{ site.posts.size }}</div><div class="stat__label">Posts</div></div>
+    <div class="stat"><div class="stat__num">{{ site.categories.size }}</div><div class="stat__label">Categories</div></div>
+    <div class="stat"><div class="stat__num">{{ site.tags.size }}</div><div class="stat__label">Tags</div></div>
+  </div>
+</div>
 
 ## 경력
 

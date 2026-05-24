@@ -65,3 +65,103 @@
   -webkit-transform: rotate(-90deg); /* Safari 3-8 */
   transform: rotate(-90deg);
 }
+
+/* =====================================================================
+   Categories — card grid with per-category hue (handoff §8)
+   ===================================================================== */
+
+$cat-hues: (
+  "study-note":             oklch(60% 0.10 30),
+  "statistics":             oklch(60% 0.10 252),
+  "machine-learning":       oklch(60% 0.10 165),
+  "recommender-systems":    oklch(60% 0.10 300),
+  "reinforcement-learning": oklch(60% 0.10 75),
+  "paper-review":           oklch(60% 0.10 200),
+  "project":                oklch(60% 0.04 252),
+);
+
+.cats-hero {
+  padding: 32px 0 24px;
+  border-bottom: 1px solid var(--main-border-color);
+  margin-bottom: 32px;
+}
+
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+  padding: 20px 22px;
+  background: var(--button-bg);
+  border: 1px solid var(--card-border-color);
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.15s, border-color 0.15s;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--text-muted-color);
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__foot {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: $font-family-mono;
+  }
+}
+
+.cat-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted-color);
+  flex-shrink: 0;
+}
+
+@each $slug, $hue in $cat-hues {
+  .cat-dot--#{$slug} {
+    background: $hue;
+  }
+}
+
+.cat-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--heading-color);
+}
+
+.cat-count {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--heading-color);
+  letter-spacing: -0.02em;
+}
+
+.cat-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+}
+
+@media (max-width: 830px) {
+  .cats-grid {
+    grid-template-columns: 1fr;
+  }
+}

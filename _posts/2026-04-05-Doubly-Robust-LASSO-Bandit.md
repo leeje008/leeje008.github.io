@@ -4,6 +4,7 @@ title: "[Paper Review] Doubly-Robust Lasso Bandit"
 categories: [Paper Review]
 tags: [paper-review, contextual-bandits, lasso, doubly-robust, missing-data, sparse-regression]
 math: true
+pin: true
 ---
 
 ## Introduction

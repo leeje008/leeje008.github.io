@@ -2,6 +2,14 @@
  * The SCSS variables
  */
 
+/* font family */
+
+$font-family-base: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont,
+  "Apple SD Gothic Neo", "Helvetica Neue", sans-serif !default;
+$font-family-heading: $font-family-base !default;
+$font-family-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas,
+  "Courier New", monospace !default;
+
 /* sidebar */
 
 $sidebar-width: 260px !default;        /* the basic width */

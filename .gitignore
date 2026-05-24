@@ -19,3 +19,7 @@ Gemfile.lock
 # npm dependencies
 node_modules
 package-lock.json
+
+# personal documents (do not publish)
+profile/
+고영헌_자기소개서_*.md

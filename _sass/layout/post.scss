@@ -367,3 +367,200 @@ nav[data-toggle=toc] {
     border-radius: 0;
   }
 }
+
+/* =====================================================================
+   Refined post detail — modern editorial / academic-minimal (handoff §6)
+   ===================================================================== */
+
+h1[data-toc-skip] {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 8px 0 18px;
+  color: var(--heading-color);
+  text-wrap: balance;
+}
+
+.post-meta {
+  font-family: $font-family-mono;
+  font-size: 12px;
+  color: var(--text-muted-color);
+
+  em {
+    font-style: normal;
+    color: var(--text-color);
+  }
+}
+
+/* ---- Body typography ---- */
+.post-content {
+  font-size: 15.5px;
+  line-height: 1.78;
+  color: var(--text-color);
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 56px 0 16px;
+    color: var(--heading-color);
+    scroll-margin-top: 80px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 40px 0 12px;
+    color: var(--heading-color);
+  }
+
+  p {
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+
+  strong {
+    color: var(--heading-color);
+    font-weight: 600;
+  }
+
+  /* inline code */
+  code {
+    font-family: $font-family-mono;
+    font-size: 0.88em;
+    background: var(--tb-odd-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--heading-color);
+  }
+
+  /* code block (rouge) */
+  div.highlighter-rouge,
+  figure.highlight {
+    background: var(--tb-odd-bg) !important;
+    border: 1px solid var(--main-border-color);
+    border-radius: 10px;
+    padding: 4px 0;
+    margin: 0 0 24px;
+    overflow: hidden;
+  }
+
+  pre {
+    background: transparent !important;
+    padding: 14px 20px !important;
+    font-family: $font-family-mono;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* blockquote */
+  blockquote {
+    margin: 24px 0;
+    padding: 4px 0 4px 20px;
+    border-left: 2px solid var(--link-color);
+    color: var(--text-color);
+    font-style: normal;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  /* table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 0 28px;
+
+    th,
+    td {
+      text-align: left;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--main-border-color);
+    }
+
+    th {
+      font-family: $font-family-mono;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted-color);
+      font-weight: 500;
+      background: var(--tb-odd-bg);
+    }
+  }
+}
+
+/* ---- TOC sticky improvement ---- */
+#toc-wrapper {
+  position: sticky;
+  top: 32px;
+
+  .toc-title {
+    font-family: $font-family-mono;
+    font-size: 10px !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted-color) !important;
+    margin-bottom: 14px !important;
+  }
+
+  nav[data-toggle="toc"] ul {
+    border-left: 1px solid var(--main-border-color);
+
+    a.nav-link {
+      font-size: 12.5px !important;
+      padding: 6px 14px !important;
+      color: var(--text-muted-color) !important;
+      border-left: 1px solid transparent !important;
+      margin-left: -1px;
+
+      &.active {
+        color: var(--heading-color) !important;
+        font-weight: 500;
+        border-left: 1px solid var(--link-color) !important;
+      }
+    }
+  }
+}
+
+/* ---- Post nav prev/next as cards ---- */
+.post-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 48px 0;
+
+  .btn {
+    padding: 18px 20px !important;
+    border: 1px solid var(--card-border-color) !important;
+    border-radius: 12px !important;
+    background: var(--button-bg) !important;
+    color: var(--heading-color) !important;
+    box-shadow: none !important;
+
+    &:hover {
+      border-color: var(--text-muted-color) !important;
+    }
+  }
+}
+
+/* ---- Related posts ---- */
+#related-posts h3 {
+  font-family: $font-family-mono;
+  font-size: 11px !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  margin-bottom: 16px;
+}
+
+#related-posts .card {
+  border: 1px solid var(--card-border-color) !important;
+  border-radius: 12px !important;
+  background: var(--button-bg) !important;
+  box-shadow: none !important;
+}
