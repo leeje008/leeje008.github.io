@@ -20,3 +20,7 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 # Jekyll <= 4.2.0 compatibility with Ruby 3.0
 gem "webrick", "~> 1.7"
+
+# Pin sass-embedded below 1.100 — 1.100.0 build fails on Ruby 3.1 runners
+# due to `NameError: uninitialized constant JSON::Fragment` (needs json >= 2.10)
+gem "sass-embedded", "< 1.100"
