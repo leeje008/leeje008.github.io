@@ -4,6 +4,7 @@ title: "[Paper Review] Sparse-Input Neural Networks for High-dimensional Nonpara
 categories: [Paper Review]
 tags: [paper-review, deep-learning, variable-selection, high-dimensional, statistics]
 math: true
+pin: true
 ---
 
 ## Introduction

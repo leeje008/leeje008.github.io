@@ -82,8 +82,9 @@ theme_mode: light   # [light|dark] — locked to light, hides mode toggle
 # e.g. 'https://cdn.com'
 img_cdn: 
 
-# the avatar on sidebar, support local or CORS resources
-avatar: './assets/img/me3.png'
+# the avatar used on home hero / about hero / SEO meta (증명사진)
+# sidebar uses /assets/img/sidebar-mark.svg directly (see _includes/sidebar.html)
+avatar: './assets/img/me.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true

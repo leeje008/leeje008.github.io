@@ -4,7 +4,6 @@ title: "[Project] Terminal-based AI coding agent powered by local LLMs via Ollam
 categories: [Project]
 tags: [python]
 math: false
-pin: true
 ---
 
 ## 프로젝트 개요

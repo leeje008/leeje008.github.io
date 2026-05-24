@@ -4,7 +4,6 @@ title: "[Project] 주식 포트폴리오 에이전트 - Streamlit + Claude LLM �
 categories: [Project]
 tags: [anthropic-claude, finance, llm-agent, portfolio-optimization, python, streamlit]
 math: false
-pin: true
 ---
 
 ## 프로젝트 개요
